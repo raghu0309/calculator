@@ -1,4 +1,4 @@
-git
+
 def p1():
     try:
         def remq(a, p):
@@ -22,6 +22,7 @@ def p1():
                 p = a.index("*")
                 res = float(a[p - 1]) * float(a[p + 1])
                 a = remq(a, p)
+                a.insert(p - 1, res)
             while "/" in a:
                 p = a.index("/")
                 res = float(a[p - 1]) / float(a[p + 1])
@@ -35,7 +36,7 @@ def p1():
                     res -= float(a[i + 1])
             return res
 
-        s = input("Enter Operation Format With [+,*,-,+] Only\n")
+        s = input("Enter Operation Format With [+,*,-,/] Only\n")
         b=calculator(s)
     except:
         print("Enter Valid in Format Example:  1+2*3/4\n")
